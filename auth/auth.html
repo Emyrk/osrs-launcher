@@ -1,0 +1,9 @@
+<div>
+    If you are seeing this, authentication is stuck.
+</div>
+<script>
+    // Just redirect the user to the backend. Only the browser can read the hash.
+    if(window.location.hash !== "") {
+        window.location = (window.location.hash).replace("#", "?");
+    }
+</script>
