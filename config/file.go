@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/Emyrk/osrs-launcher-auth/auth"
+	"github.com/Emyrk/osrs-launcher/auth"
 	"github.com/kirsle/configdir"
 	"golang.org/x/xerrors"
 )

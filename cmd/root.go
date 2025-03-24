@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/Emyrk/osrs-launcher-auth/internal/version"
+	"github.com/Emyrk/osrs-launcher/internal/version"
 	"github.com/google/uuid"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"

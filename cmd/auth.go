@@ -6,8 +6,8 @@ import (
 	"slices"
 	"time"
 
-	"github.com/Emyrk/osrs-launcher-auth/auth"
-	"github.com/Emyrk/osrs-launcher-auth/config"
+	"github.com/Emyrk/osrs-launcher/auth"
+	"github.com/Emyrk/osrs-launcher/config"
 	"github.com/charmbracelet/huh"
 	"github.com/rs/zerolog/log"
 

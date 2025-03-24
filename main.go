@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Emyrk/osrs-launcher-auth/cmd"
+	"github.com/Emyrk/osrs-launcher/cmd"
 )
 
 func main() {
