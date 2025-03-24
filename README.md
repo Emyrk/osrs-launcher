@@ -8,3 +8,11 @@ credentials by default on Linux.
 ```shell
 go install github.com/Emyrk/osrs-launcher@latest
 ```
+
+# Usage
+
+```shell
+# The app needs to listen on port 80 for the oauth local callback
+sudo setcap CAP_NET_BIND_SERVICE=+eip `which osrs-launcher`
+osrs-launcher auth
+```
