@@ -15,4 +15,7 @@ go install github.com/Emyrk/osrs-launcher@latest
 # The app needs to listen on port 80 for the oauth local callback
 sudo setcap CAP_NET_BIND_SERVICE=+eip `which osrs-launcher`
 osrs-launcher auth
+
+# Do the steps until the program closes
+# Then launch RuneLite and you will be authenticated
 ```
