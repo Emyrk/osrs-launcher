@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"slices"
+	"strings"
 	"time"
 
 	"github.com/Emyrk/osrs-launcher/auth"
@@ -33,6 +34,9 @@ func (r *Root) Auth() *serpent.Command {
 			ctx := i.Context()
 			err := auth.TestPort80()
 			if err != nil {
+				if strings.Contains(err.Error(), "permission denied") {
+					return fmt.Errorf("port 80 is blocked, you must grant permission for this program to listen on this port. Run 'sudo setcap CAP_NET_BIND_SERVICE=+eip `which %s`'", os.Args[0])
+				}
 				return fmt.Errorf("testing port 80: %w", err)
 			}
 
