@@ -1,4 +1,4 @@
-module github.com/Emyrk/osrs-launcher-auth
+module github.com/Emyrk/osrs-launcher
 
 go 1.21.4
 
