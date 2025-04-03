@@ -16,7 +16,11 @@ import (
 )
 
 func (r *Root) Auth() *serpent.Command {
-	var outputDestination string
+	var (
+		noProxy           bool
+		outputDestination string
+	)
+
 	return &serpent.Command{
 		Use: "auth",
 		Options: serpent.OptionSet{
@@ -27,6 +31,13 @@ func (r *Root) Auth() *serpent.Command {
 				FlagShorthand: "O",
 				Default:       "$HOME/.runelite/credentials.properties",
 				Value:         serpent.StringOf(&outputDestination),
+			},
+			{
+				Name:        "Disable Proxy",
+				Description: "Flag to force disable use of the proxychains configuration.",
+				Flag:        "no-proxy",
+				Default:     "false",
+				Value:       serpent.BoolOf(&noProxy),
 			},
 		},
 		Middleware: serpent.Chain(r.LoggerMW(), UseProxy),

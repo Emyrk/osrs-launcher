@@ -66,6 +66,12 @@ func UseProxy(next serpent.HandlerFunc) serpent.HandlerFunc {
 	return func(i *serpent.Invocation) error {
 		data, err := os.ReadFile("/etc/proxychains4.conf")
 		if err == nil {
+			// Do not use proxy if the user has set the no-proxy flag
+			if no, _ := i.Command.Options.FlagSet().GetBool("no-proxy"); no {
+				log.Info().Msg("Proxy settings file found, but disabled by user. No proxy will be used.")
+				return next(i)
+			}
+
 			scanner := bufio.NewScanner(bytes.NewReader(data))
 			for scanner.Scan() {
 				line := scanner.Text()
